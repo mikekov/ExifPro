@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{a90726c7-debd-49d1-8cf8-dcd7fe4cca23}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\7z.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\7zAlloc.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\7zBuf.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\7zCrc.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\7zFile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Bcj2.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Bra.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CpuArch.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Lzma2Dec.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\LzmaDec.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Types.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\7zAlloc.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\7zBuf.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\7zCrc.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\7zCrcOpt.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\7zDec.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\7zFile.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\7zIn.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\7zStream.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Bcj2.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Bra.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Bra86.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CpuArch.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lzma2Dec.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LzmaDec.c">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="SfxSetup.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SfxSetup.rc" />
+  </ItemGroup>
+</Project>

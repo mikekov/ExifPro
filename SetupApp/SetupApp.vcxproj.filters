@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{64aa3cab-9b1a-42d3-bc0d-1bbb56b95aab}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2b0ad64b-8aef-4425-9ac8-9b6a5e6fc6b5}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{3868edd7-49b7-4984-bf23-d9be00fa946b}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SetupApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="50comupd.exe">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Template\FrameImage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Template\Frames.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Template\FrameSet.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Template\Grid.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Template\GridImage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UnInstall\Release\UnInstall.exe">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Templates\FrameImage.html" />
+    <None Include="..\Templates\Frames.html" />
+    <None Include="..\Templates\FrameSet.html" />
+    <None Include="..\Templates\Grid.html" />
+    <None Include="..\Templates\GridImage.html" />
+    <None Include="..\bin\Win32-Release\ExifPro.chm" />
+    <None Include="..\bin\x64-Release\ExifPro.exe" />
+    <None Include="..\bin\Win32-Release\ExifPro.exe" />
+    <None Include="..\bin\Win32-Release\ExifPro-sml.pdb" />
+    <None Include="..\bin\x64-Release\ExifPro-sml.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\camera.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ExifPro.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\image.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\manifest.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="License.txt" />
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SetupApp.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+ExifPro build instructions
+
+Build environment:
+
+Visual Studio 2015 + MFC.
+
+
+Dependencies:
+
+Download boost libs 1.58.0 or newer from www.boost.org
+
+Unpack and build boost libraries, starting with bjam build.
+
+Debug:
+b2 architecture=x86 address-model=64 link=static threading=multi variant=debug --with-date_time --with-thread --with-system stage
+
+Release:
+b2 architecture=x86 address-model=64 link=static runtime-link=static threading=multi variant=release --with-date_time --with-thread --with-system stage
+
+Edit CommonProjDefinitions.props to point to boost folder.
+
+
+Open ExifPro.sln, select Debug or Release x64 configuration and build solution.
+Binaries are placed in ExifPro/bin folder.
