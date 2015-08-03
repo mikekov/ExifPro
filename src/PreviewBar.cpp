@@ -65,7 +65,7 @@ bool PreviewBar::Create(PreviewPane* parent, bool big)
 
 	static const int cmd[]= { ID_ZOOM_100, ID_ZOOM_FIT, ID_ZOOM_OUT, ID_ZOOM_IN, ID_PREVIEW_OPTIONS, ID_MAGNIFIER_LENS, ID_SET_WALLPAPER, ID_IMG_ROTATE_90_CCW, ID_IMG_ROTATE_90_CW };
 
-	int bmp= big ? IDB_ZOOMBAR_BIG : IDB_ZOOMBAR;
+	int bmp= IDB_ZOOMBAR;
 	toolbar_top_wnd_.SetPadding(8, 8);
 	VERIFY(toolbar_top_wnd_.Create("XXp......", cmd, bmp, vertical_ ? 0 : IDS_ZOOMBAR, this, -1, vertical_));
 	toolbar_top_wnd_.CreateDisabledImageList(bmp);
@@ -352,7 +352,7 @@ LRESULT PreviewBar::OnTbClicked(WPARAM hwnd, LPARAM code)
 
 void PreviewBar::SetBitmapSize(bool big)
 {
-	int bmp= big ? IDB_ZOOMBAR_BIG : IDB_ZOOMBAR;
+	int bmp= IDB_ZOOMBAR;
 
 	toolbar_top_wnd_.ReplaceImageList(bmp, TB_IMAGES);
 	toolbar_top_wnd_.CreateDisabledImageList(bmp);

@@ -1636,7 +1636,6 @@
     <Image Include="res\warning_2.ico" />
     <Image Include="res\zoombar.bmp" />
     <Image Include="res\ZoomBar.png" />
-    <Image Include="res\ZoomBarBig.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\copy-anim.avi" />

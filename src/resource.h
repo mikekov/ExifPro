@@ -65,7 +65,6 @@ ____________________________________________________________________________*/
 #define IDD_FILE_MASK                   169
 #define IDB_TASK_BAR                    169
 #define IDD_DESCRIPTION                 170
-#define IDB_ZOOMBAR_BIG                 172
 #define IDD_RESIZE                      174
 #define IDD_RESIZING                    175
 #define IDB_ZOOMBAR                     177

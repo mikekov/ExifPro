@@ -3195,9 +3195,6 @@
     <Image Include="res\ZoomBar.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="res\ZoomBarBig.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="res\about.png">
       <Filter>Resource Files</Filter>
     </Image>
