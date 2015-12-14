@@ -42,8 +42,9 @@ ____________________________________________________________________________*/
 #include <utility>
 
 // x86 build targetting WinXP needs 0501 below, or else things in the UI start falling apart (like rebar InsertBand)
-#define WINVER 0x0501
+//#define WINVER 0x0501
 //#define WINVER 0x0600		// Vista
+#define WINVER 0x0600		// Vista
 #define _WIN32_IE 0x0700	// IE 7
 
 #define __VSSYM32_H__	// force inclusion of vssym32.h instead of tmschema.h, even in WIN 0x0501

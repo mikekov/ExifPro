@@ -116,23 +116,23 @@ public:
 	saving_visitor(CFile& f) : f_(f)
 	{}
 
-    void operator () (String& s) const
-    {
+	void operator () (String& s) const
+	{
 		save(f_, 's');
 		save(f_, s);
-    }
+	}
 
-    void operator () (int& i) const
-    {
+	void operator () (int& i) const
+	{
 		save(f_, 'i');
 		save(f_, i);
-    }
+	}
 
-    void operator () (Blob& v) const
-    {
+	void operator () (Blob& v) const
+	{
 		save(f_, 'v');
 		save(f_, v);
-    }
+	}
 
 private:
 	CFile& f_;

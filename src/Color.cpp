@@ -250,3 +250,10 @@ extern COLORREF CalcShade(COLORREF rgb_color, float shade)
 
 	return rgb_color;
 }
+
+
+extern float CalcColorBrightness(COLORREF rgb_color)
+{
+	float brightness = GetRValue(rgb_color) * 0.30f + GetGValue(rgb_color) * 0.59f + GetBValue(rgb_color) * 0.11f;
+	return brightness;
+}

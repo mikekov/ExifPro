@@ -245,7 +245,7 @@
       <HeaderFileName />
     </Midl>
     <ClCompile>
-      <AdditionalOptions>/Zm165 /MP %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/Zm210 /MP %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(Libraries);$(Boost);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;WIN64;USE_GDI_PLUS;USE_DIRECT2D;%(PreprocessorDefinitions)</PreprocessorDefinitions>

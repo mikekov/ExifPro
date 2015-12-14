@@ -18,3 +18,5 @@ extern COLORREF CalcNewColor(COLORREF rgb_color1, COLORREF rgb_color2, float alp
 extern COLORREF CalcNewColor(COLORREF color, double gamma);
 
 extern COLORREF CalcShade(COLORREF rgb_color, float shade);
+
+extern float CalcColorBrightness(COLORREF rgb_color);

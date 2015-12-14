@@ -582,7 +582,7 @@ void InfoPane::SetColors()
 	auto text = g_Settings.AppColors()[AppColors::Text];
 	auto backgnd = g_Settings.AppColors()[AppColors::Background];
 
-	float brightness= GetRValue(backgnd) * 0.30f + GetGValue(backgnd) * 0.59f + GetBValue(backgnd) * 0.11f;
+	float brightness = CalcColorBrightness(backgnd);
 
 	COLORREF dark_backgnd = brightness > 128 ? CalcShade(backgnd, g_dark_backgnd_brightness) : CalcShade(backgnd, g_backgnd_brightness);
 

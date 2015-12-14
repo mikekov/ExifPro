@@ -224,7 +224,7 @@ void AboutDlg::OnTimer(UINT_PTR event_id)
 	CRect rect;
 	GetClientRect(rect);
 	rect.DeflateRect(Pixels(20), Pixels(1), Pixels(2), Pixels(1));
-	rect.top = rect.bottom - Pixels(17);
+	rect.top = rect.bottom - Pixels(16);
 
 	// prepare bmp to erase background behind text
 	if (scroll_bmp_.m_hObject == 0)

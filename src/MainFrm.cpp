@@ -25,6 +25,7 @@ ____________________________________________________________________________*/
 #include "Config.h"
 #include "GetDefaultGuiFont.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE

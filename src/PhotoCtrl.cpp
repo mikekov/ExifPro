@@ -3782,7 +3782,8 @@ void PhotoCtrl::Item::DrawItem(CDC& dc, CRect rect, PhotoCtrl& ctrl, bool is_cur
 		else
 		{
 			COLORREF backgnd= ctrl.rgb_bk_color_;
-			float brightness= GetRValue(backgnd) * 0.30f + GetGValue(backgnd) * 0.59f + GetBValue(backgnd) * 0.11f;
+
+			float brightness = CalcColorBrightness(backgnd);
 
 			rgb_focus_outline = brightness > 128 ? CalcShade(backgnd, -10.0f) : CalcShade(backgnd, 12.0f);
 		}
