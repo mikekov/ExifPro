@@ -2,10 +2,9 @@
 ; jdmrgext.asm - merged upsampling/color conversion (64-bit SSE2)
 ;
 ; Copyright 2009, 2012 Pierre Ossman <ossman@cendio.se> for Cendio AB
-; Copyright 2009, 2012 D. R. Commander
+; Copyright (C) 2009, 2012, D. R. Commander.
 ;
-; Based on
-; x86 SIMD extension for IJG JPEG library
+; Based on the x86 SIMD extension for IJG JPEG library
 ; Copyright (C) 1999-2006, MIYASAKA Masaru.
 ; For conditions of distribution and use, see copyright notice in jsimdext.inc
 ;
@@ -52,14 +51,14 @@ EXTN(jsimd_h2v1_merged_upsample_sse2):
         collect_args
         push    rbx
 
-        mov     rcx, r10        ; col
+        mov     ecx, r10d        ; col
         test    rcx,rcx
         jz      near .return
 
         push    rcx
 
         mov     rdi, r11
-        mov     rcx, r12
+        mov     ecx, r12d
         mov     rsi, JSAMPARRAY [rdi+0*SIZEOF_JSAMPARRAY]
         mov     rbx, JSAMPARRAY [rdi+1*SIZEOF_JSAMPARRAY]
         mov     rdx, JSAMPARRAY [rdi+2*SIZEOF_JSAMPARRAY]
@@ -455,10 +454,10 @@ EXTN(jsimd_h2v2_merged_upsample_sse2):
         collect_args
         push    rbx
 
-        mov     rax, r10
+        mov     eax, r10d
 
         mov     rdi, r11
-        mov     rcx, r12
+        mov     ecx, r12d
         mov     rsi, JSAMPARRAY [rdi+0*SIZEOF_JSAMPARRAY]
         mov     rbx, JSAMPARRAY [rdi+1*SIZEOF_JSAMPARRAY]
         mov     rdx, JSAMPARRAY [rdi+2*SIZEOF_JSAMPARRAY]

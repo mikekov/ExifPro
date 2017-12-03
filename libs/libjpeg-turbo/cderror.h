@@ -4,7 +4,8 @@
  * Copyright (C) 1994-1997, Thomas G. Lane.
  * Modified 2009 by Guido Vollbeding.
  * This file is part of the Independent JPEG Group's software.
- * For conditions of distribution and use, see the accompanying README file.
+ * For conditions of distribution and use, see the accompanying README.ijg
+ * file.
  *
  * This file defines the error and message codes for the cjpeg/djpeg
  * applications.  These strings are not needed as part of the JPEG library
@@ -74,6 +75,7 @@ JMESSAGE(JWRN_GIF_NOMOREDATA, "Ran out of GIF bits")
 #ifdef PPM_SUPPORTED
 JMESSAGE(JERR_PPM_COLORSPACE, "PPM output must be grayscale or RGB")
 JMESSAGE(JERR_PPM_NONNUMERIC, "Nonnumeric data in PPM file")
+JMESSAGE(JERR_PPM_TOOLARGE, "Integer value too large in PPM file")
 JMESSAGE(JERR_PPM_NOT, "Not a PPM/PGM file")
 JMESSAGE(JTRC_PGM, "%ux%u PGM image")
 JMESSAGE(JTRC_PGM_TEXT, "%ux%u text PGM image")

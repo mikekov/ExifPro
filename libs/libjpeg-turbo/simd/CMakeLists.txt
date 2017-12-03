@@ -1,6 +1,7 @@
 if(NOT DEFINED NASM)
-  set(NASM nasm CACHE PATH "Path to NASM/YASM executable")
+  find_program(NASM NAMES nasm yasm DOC "Path to NASM/YASM executable")
 endif()
+message(STATUS "NASM = ${NASM}")
 
 if(SIMD_X86_64)
   set(NAFLAGS -fwin64 -DWIN64 -D__x86_64__)
@@ -22,17 +23,19 @@ endif()
 
 if(SIMD_X86_64)
   set(SIMD_BASENAMES jfdctflt-sse-64 jccolor-sse2-64 jcgray-sse2-64
-    jcsample-sse2-64 jdcolor-sse2-64 jdmerge-sse2-64 jdsample-sse2-64
-    jfdctfst-sse2-64 jfdctint-sse2-64 jidctflt-sse2-64 jidctfst-sse2-64
-    jidctint-sse2-64 jidctred-sse2-64 jquantf-sse2-64 jquanti-sse2-64)
+    jchuff-sse2-64 jcsample-sse2-64 jdcolor-sse2-64 jdmerge-sse2-64
+    jdsample-sse2-64 jfdctfst-sse2-64 jfdctint-sse2-64 jidctflt-sse2-64
+    jidctfst-sse2-64 jidctint-sse2-64 jidctred-sse2-64 jquantf-sse2-64
+    jquanti-sse2-64)
   message(STATUS "Building x86_64 SIMD extensions")
 else()
   set(SIMD_BASENAMES jsimdcpu jfdctflt-3dn jidctflt-3dn jquant-3dn jccolor-mmx
     jcgray-mmx jcsample-mmx jdcolor-mmx jdmerge-mmx jdsample-mmx jfdctfst-mmx
     jfdctint-mmx jidctfst-mmx jidctint-mmx jidctred-mmx jquant-mmx jfdctflt-sse
-    jidctflt-sse jquant-sse jccolor-sse2 jcgray-sse2 jcsample-sse2 jdcolor-sse2
-    jdmerge-sse2 jdsample-sse2 jfdctfst-sse2 jfdctint-sse2 jidctflt-sse2
-    jidctfst-sse2 jidctint-sse2 jidctred-sse2 jquantf-sse2 jquanti-sse2)
+    jidctflt-sse jquant-sse jccolor-sse2 jcgray-sse2 jchuff-sse2 jcsample-sse2
+    jdcolor-sse2 jdmerge-sse2 jdsample-sse2 jfdctfst-sse2 jfdctint-sse2
+    jidctflt-sse2 jidctfst-sse2 jidctint-sse2 jidctred-sse2 jquantf-sse2
+    jquanti-sse2)
   message(STATUS "Building i386 SIMD extensions")
 endif()
 
