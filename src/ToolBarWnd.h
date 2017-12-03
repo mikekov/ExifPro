@@ -46,7 +46,7 @@ public:
 	void SetDisabledImageList(int disabled_bmp_id);
 	bool CreateDisabledImageList(int bmp_id, float saturation= -0.3f, float lightness= +0.15f, float alpha= 1.0f);
 
-//	void SetOwnerDraw(bool owner_draw)		{ owner_draw_ = owner_draw; }
+	void SetOwnerDraw(bool owner_draw)		{ owner_draw_ = owner_draw; }
 
 	void SetScrollInfoReceiver(CWnd* wnd)	{ pass_scroll_info_ = wnd; }
 

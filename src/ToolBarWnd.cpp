@@ -14,6 +14,8 @@ ____________________________________________________________________________*/
 #include "PNGImage.h"
 #include "WhistlerLook.h"
 #include "GetDefaultGuiFont.h"
+#include "AppColors.h"
+#include "Color.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -50,7 +52,7 @@ BEGIN_MESSAGE_MAP(ToolBarWnd, CToolBarCtrl)
 	ON_NOTIFY_REFLECT_EX(TBN_GETINFOTIP, OnGetInfoTip)
 	ON_NOTIFY_REFLECT(TBN_QUERYINSERT, OnQueryInsert)
 	ON_NOTIFY_REFLECT(TBN_QUERYDELETE, OnQueryDelete)
-//	ON_NOTIFY_REFLECT(NM_CUSTOMDRAW, OnCustomDraw)
+	ON_NOTIFY_REFLECT(NM_CUSTOMDRAW, OnCustomDraw)
 //	ON_NOTIFY_REFLECT(TBN_GETDISPINFO, OnGetDispInfo)
 	ON_NOTIFY_REFLECT(TBN_GETBUTTONINFO, OnGetButtonInfo)
 	ON_NOTIFY_REFLECT(TBN_BEGINADJUST, OnBeginAdjust)
@@ -291,6 +293,8 @@ bool ToolBarWnd::Create(const char* a_template, const int commands[], int bmp_id
 
 	if (!CToolBarCtrl::Create(tb_style, CRect(0,0,0,0), parent, id))
 		return false;
+
+	::SetWindowTheme(m_hWnd, L"", L"");
 
 	return AddButtons(a_template, commands, bmp_id, str_id, vertical);
 }
@@ -605,33 +609,54 @@ void ToolBarWnd::SetPadding(int cx, int cy)	// set button pad (before creation)
 	pad_size_ = CSize(cx, cy);
 }
 
-/*
+
 void ToolBarWnd::OnCustomDraw(NMHDR* nm_hdr, LRESULT* result)
 {
 	NMTBCUSTOMDRAW* NM_custom_draw= reinterpret_cast<NMTBCUSTOMDRAW*>(nm_hdr);
 	*result = CDRF_DODEFAULT;
 
+	const ApplicationColors& colors = GetAppColors();
+	static HBRUSH backgnd = 0;
+
 	if (!owner_draw_)
 		return;
+	NM_custom_draw->clrText = colors[AppColors::Text];;
+//	NM_custom_draw->clrTextHighlight = RGB(240, 255, 0);
+//	NM_custom_draw->hbrMonoDither = (HBRUSH)::GetStockObject(WHITE_BRUSH);
+	NM_custom_draw->hbrMonoDither = backgnd;
+	//NM_custom_draw->hbrLines = (HBRUSH)::GetStockObject(GRAY_BRUSH);
+	//NM_custom_draw->hpenLines = (HPEN)::GetStockObject(WHITE_PEN);
+	//NM_custom_draw->clrBtnFace = RGB(0, 0, 255);
+	NM_custom_draw->clrBtnHighlight = colors[AppColors::Selection];	// checked button
+	//NM_custom_draw->clrMark = RGB(0, 255, 0);
+	NM_custom_draw->clrHighlightHotTrack = CalcNewColor(colors[AppColors::Background], colors[AppColors::Selection], 0.3f);
 
 	switch (NM_custom_draw->nmcd.dwDrawStage)
 	{
 	case CDDS_PREPAINT:
-		*result = CDRF_NOTIFYITEMDRAW;
+		*result = CDRF_NOTIFYITEMDRAW | CDRF_NOTIFYPOSTPAINT;// | TBCDRF_NOEDGES | TBCDRF_HILITEHOTTRACK | TBCDRF_NOETCHEDEFFECT;
+		backgnd = ::CreateSolidBrush(colors[AppColors::Selection]);
+		NM_custom_draw->hbrMonoDither = backgnd;
 		break;
 	case CDDS_ITEMPREPAINT:
-		*result = CDRF_SKIPDEFAULT; //TBCDRF_NOETCHEDEFFECT | TBCDRF_NOOFFSET | TBCDRF_NOEDGES | TBCDRF_NOMARK; //| TBCDRF_NOBACKGROUND;
-		HIMAGELIST image_list= NM_custom_draw->nmcd.uItemState & CDIS_HOT ? image_list_hot_ : image_list_;
-		CPoint pos(NM_custom_draw->nmcd.rc.left, NM_custom_draw->nmcd.rc.top);
-//		if (NM_custom_draw->nmcd.uItemState & CDIS_SELECTED)
-//			++pos.x;
-		ImageList_Draw(image_list, CommandToIndex(NM_custom_draw->nmcd.dwItemSpec), NM_custom_draw->nmcd.hdc,
-			pos.x + 1, pos.y + 1, ILD_TRANSPARENT);
-//TRACE(L"spec  %x\n", NM_custom_draw->nmcd.dwItemSpec);
-//TRACE(L"state %x\n", NM_custom_draw->nmcd.uItemState);
+//		*result = CDRF_SKIPDEFAULT; //TBCDRF_NOETCHEDEFFECT | TBCDRF_NOOFFSET | TBCDRF_NOEDGES | TBCDRF_NOMARK; //| TBCDRF_NOBACKGROUND;
+//		HIMAGELIST image_list= NM_custom_draw->nmcd.uItemState & CDIS_HOT ? image_list_hot_ : image_list_;
+//		CPoint pos(NM_custom_draw->nmcd.rc.left, NM_custom_draw->nmcd.rc.top);
+////		if (NM_custom_draw->nmcd.uItemState & CDIS_SELECTED)
+////			++pos.x;
+//		ImageList_Draw(image_list, CommandToIndex(NM_custom_draw->nmcd.dwItemSpec), NM_custom_draw->nmcd.hdc,
+//			pos.x + 1, pos.y + 1, ILD_TRANSPARENT);
+////TRACE(L"spec  %x\n", NM_custom_draw->nmcd.dwItemSpec);
+////TRACE(L"state %x\n", NM_custom_draw->nmcd.uItemState);
+		*result = TBCDRF_NOEDGES | TBCDRF_HILITEHOTTRACK | TBCDRF_NOETCHEDEFFECT;
+		break;
+
+	case CDDS_POSTPAINT:
+		::DeleteObject(backgnd);
+		backgnd = nullptr;
 		break;
 	}
-} */
+} 
 
 
 void ToolBarWnd::SetHotImageList(int hot_bmp_id)

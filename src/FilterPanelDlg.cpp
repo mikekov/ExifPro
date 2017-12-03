@@ -36,11 +36,11 @@ struct FilterPanelDlg::Impl
 		dialogs_[4] = 0;
 	}
 
-	void InitDlg(CDialog* self);
+	void InitDlg(DialogBase* self);
 	void SubFilterChanged(FilterDialog* dlg);
 	void UpdateStoreButton();
 
-	CDialog* self_;
+	DialogBase* self_;
 	DlgAutoResize resize_map_;
 	DlgListCtrl list_;
 	CEdit filter_name_;
@@ -56,7 +56,7 @@ struct FilterPanelDlg::Impl
 };
 
 
-FilterPanelDlg::FilterPanelDlg() : impl_(new Impl), CDialog(FilterPanelDlg::IDD, 0)
+FilterPanelDlg::FilterPanelDlg() : impl_(new Impl), DialogBase(FilterPanelDlg::IDD, 0)
 {
 	::LoadPngImageList(impl_->funnel_, IDB_FUNNEL, ::GetSysColor(COLOR_3DFACE), true, 1);
 }
@@ -69,13 +69,13 @@ FilterPanelDlg::~FilterPanelDlg()
 
 void FilterPanelDlg::DoDataExchange(CDataExchange* DX)
 {
-	CDialog::DoDataExchange(DX);
+	DialogBase::DoDataExchange(DX);
 }
 
 enum { ADD_FILTER= 1111, DELETE_FILTER, UPDATE_FILTER };
 
 
-BEGIN_MESSAGE_MAP(FilterPanelDlg, CDialog)
+BEGIN_MESSAGE_MAP(FilterPanelDlg, DialogBase)
 	ON_WM_SIZE()
 	ON_WM_ERASEBKGND()
 	ON_COMMAND_RANGE(ADD_FILTER, UPDATE_FILTER, OnFilterCommand)
@@ -88,7 +88,7 @@ END_MESSAGE_MAP()
 
 bool FilterPanelDlg::Create(CWnd* parent, PhotoTagsCollection& tags, FilterOperations* operations)
 {
-	if (!CDialog::Create(IDD, parent))
+	if (!DialogBase::Create(IDD, parent))
 		return false;
 
 	impl_->dlg_1_.SetTags(tags);
@@ -107,7 +107,7 @@ bool FilterPanelDlg::Create(CWnd* parent, PhotoTagsCollection& tags, FilterOpera
 
 BOOL FilterPanelDlg::OnInitDialog()
 {
-	CDialog::OnInitDialog();
+	DialogBase::OnInitDialog();
 
 	impl_->InitDlg(this);
 
@@ -116,7 +116,7 @@ BOOL FilterPanelDlg::OnInitDialog()
 }
 
 
-void FilterPanelDlg::Impl::InitDlg(CDialog* self)
+void FilterPanelDlg::Impl::InitDlg(DialogBase* self)
 {
 	self_ = self;
 
@@ -274,7 +274,8 @@ BOOL FilterPanelDlg::OnEraseBkgnd(CDC* dc)
 	if (rect.IsRectEmpty())
 		return true;
 
-	dc->FillSolidRect(rect.left, rect.top, rect.Width() - 1, rect.Height(), ::GetSysColor(COLOR_3DFACE));
+	DialogBase::OnEraseBkgnd(dc);
+	//dc->FillSolidRect(rect.left, rect.top, rect.Width() - 1, rect.Height(), ::GetSysColor(COLOR_3DFACE));
 	dc->FillSolidRect(rect.right - 1, rect.top, 1, rect.Height(), ::GetSysColor(COLOR_3DSHADOW));
 
 	return true;

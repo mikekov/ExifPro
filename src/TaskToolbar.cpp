@@ -15,6 +15,7 @@ TaskToolbar::TaskToolbar()
 	small_icons_ = true;
 	rebar_band_id_ = 0;
 	horizontal_ = false;
+	SetOwnerDraw(true);
 }
 
 TaskToolbar::~TaskToolbar()
@@ -124,6 +125,8 @@ bool TaskToolbar::Create(CWnd* parent, UINT id, bool vertical)
 
 	if (!CToolBarCtrl::Create(tb_style, CRect(0,0,0,0), parent, id))
 		return false;
+
+	::SetWindowTheme(m_hWnd, L"", L"");
 
 	int w= 0;
 	{

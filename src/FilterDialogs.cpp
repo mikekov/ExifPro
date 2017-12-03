@@ -22,7 +22,7 @@ ____________________________________________________________________________*/
 extern void ManageTagsCollection(CWnd* parent, PhotoTagsCollection& tag_collection);
 
 
-FilterDialog::FilterDialog(int id, CWnd* parent) : CDialog(id, parent)
+FilterDialog::FilterDialog(int id, CWnd* parent) : DialogBase(id, parent)
 {
 	min_height_ = 0;
 }
@@ -31,7 +31,7 @@ FilterDialog::~FilterDialog()
 {}
 
 
-BEGIN_MESSAGE_MAP(FilterDialog, CDialog)
+BEGIN_MESSAGE_MAP(FilterDialog, DialogBase)
 	ON_WM_SIZE()
 	ON_BN_CLICKED(IDC_CANCEL, &FilterDialog::OnClear)
 END_MESSAGE_MAP()
@@ -39,7 +39,7 @@ END_MESSAGE_MAP()
 
 void FilterDialog::OnSize(UINT type, int cx, int cy)
 {
-	CDialog::OnSize(type, cx, cy);
+	DialogBase::OnSize(type, cx, cy);
 
 	resize_map_.Resize();
 }
@@ -47,7 +47,7 @@ void FilterDialog::OnSize(UINT type, int cx, int cy)
 
 BOOL FilterDialog::OnInitDialog()
 {
-	CDialog::OnInitDialog();
+	DialogBase::OnInitDialog();
 
 	resize_map_.BuildMap(this);
 
@@ -657,7 +657,7 @@ bool CFilterDialog_2::IsFilterActive() const
 
 void CFilterDialog_2::OnTimer(UINT_PTR event)
 {
-	CDialog::OnTimer(event);
+	DialogBase::OnTimer(event);
 
 	if (event == TIMER_ID)
 	{

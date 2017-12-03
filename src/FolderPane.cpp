@@ -321,6 +321,7 @@ bool FolderPane::Create2(CWnd* parent, UINT id, FolderPathPtr path, bool root, i
 
 	int cmds[]= { ID_RECENT_FOLDERS, ID_FOLDER_UP };
 
+	tool_bar_wnd_.SetOwnerDraw(true);
 	if (!tool_bar_wnd_.Create("vp", cmds, IDB_FOLDER_TB, 0, this, AFX_IDW_TOOLBAR))
 		return false;
 

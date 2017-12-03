@@ -67,6 +67,7 @@ bool PreviewBar::Create(PreviewPane* parent, bool big)
 
 	int bmp= IDB_ZOOMBAR;
 	toolbar_top_wnd_.SetPadding(8, 8);
+	toolbar_top_wnd_.SetOwnerDraw(true);
 	VERIFY(toolbar_top_wnd_.Create("XXp......", cmd, bmp, vertical_ ? 0 : IDS_ZOOMBAR, this, -1, vertical_));
 	toolbar_top_wnd_.CreateDisabledImageList(bmp);
 
@@ -75,12 +76,12 @@ bool PreviewBar::Create(PreviewPane* parent, bool big)
 			toolbar_top_wnd_.SetRows(3, false, 0);
 
 	toolbar_btm_wnd_.SetPadding(10, 8);
+	toolbar_btm_wnd_.SetOwnerDraw(true);
 	VERIFY(toolbar_btm_wnd_.Create("::.p|pPP|pp", cmd, bmp, vertical_ ? 0 : IDS_ZOOMBAR, this, -1, vertical_));
 	toolbar_btm_wnd_.CreateDisabledImageList(bmp);
 	toolbar_btm_wnd_.DeleteButton(ID_PREVIEW_OPTIONS);
 
-	VERIFY(zoom_wnd_.Create(WS_CHILD | WS_VISIBLE | TBS_BOTH | TBS_NOTICKS /*TBS_AUTOTICKS*/ | (vertical_ ? TBS_VERT : TBS_HORZ),
-		CRect(0,0,0,0), this, -1));
+	VERIFY(zoom_wnd_.Create(WS_CHILD | WS_VISIBLE | TBS_BOTH | TBS_NOTICKS /*TBS_AUTOTICKS*/ | (vertical_ ? TBS_VERT : TBS_HORZ), CRect(0,0,0,0), this, -1));
 
 	toolbar_top_wnd_.SetOwner(parent);
 	toolbar_top_wnd_.CWnd::SetOwner(parent);

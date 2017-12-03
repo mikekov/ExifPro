@@ -102,6 +102,7 @@ bool InfoPane::Create(CWnd* parent)
 		ID_COPY_INFO, ID_RAW_INFO, ID_TASK_EXPORT, ID_TOGGLE_PREVIEW
 	};
 
+	tool_bar_wnd_.SetOwnerDraw(true);
 	tool_bar_wnd_.SetPadding(8, 10);
 
 	if (!tool_bar_wnd_.Create("Pxpx", commands, IsCaptionBig() ? IDB_INFO_TOOLBAR_BIG : IDB_INFO_TOOLBAR, IDS_INFO_TOOLBAR, this, -1))

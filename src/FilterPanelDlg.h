@@ -8,6 +8,7 @@ ____________________________________________________________________________*/
 #pragma once
 class PhotoTagsCollection;
 #include "FilterData.h"
+#include "DialogBase.h"
 
 
 class FilterOperations
@@ -23,7 +24,7 @@ public:
 
 // FilterPanelDlg dialog
 
-class FilterPanelDlg : public CDialog
+class FilterPanelDlg : public DialogBase
 {
 public:
 	FilterPanelDlg();//CWnd* parent);

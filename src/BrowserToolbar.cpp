@@ -101,6 +101,7 @@ bool BrowserToolbar::Create(CWnd* parent, UINT id1, UINT id2, UINT rebar_band_id
 		ID_PANE_MENU, ID_FOLDERS, ID_PREVIEW, ID_INFO_BAR
 	};
 
+	main_bar_.SetOwnerDraw(true);
 	main_bar_.SetPadding(10, 8);
 
 //	small_icons_ = AfxGetApp()->GetProfileInt(REGISTRY_SECTION_TOOLBAR, REG_ICONS, 0) == 0;
@@ -121,6 +122,7 @@ bool BrowserToolbar::Create(CWnd* parent, UINT id1, UINT id2, UINT rebar_band_id
 	main_bar_.AutoResize();
 	main_bar_.SetOwner(parent);
 
+	panels_.SetOwnerDraw(true);
 	panels_.SetPadding(10, 8);
 
 	if (!panels_.Create(":.:.....vxxX", commands, bmp_id, IDS_BROWSER_TOOLBAR, this, id2))

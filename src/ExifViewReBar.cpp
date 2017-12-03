@@ -74,6 +74,13 @@ tool_bar_thumb_wnd_.SetOnIdleUpdateState(false);
 tool_bar_group_wnd_.SetOnIdleUpdateState(false);
 tool_bar_sort_wnd_.SetOnIdleUpdateState(false);*/
 
+	toolbar_first_.SetOwnerDraw(true);
+	tool_bar_view_wnd_.SetOwnerDraw(true);
+	tool_bar_thumb_wnd_.SetOwnerDraw(true);
+	tool_bar_group_wnd_.SetOwnerDraw(true);
+	tool_bar_sort_wnd_.SetOwnerDraw(true);
+	toolbar_filter_.SetOwnerDraw(true);
+
 //	if (!CHorzReBar::Create(parent, false, RBS_FIXEDORDER/*RBS_VARHEIGHT | RBS_AUTOSIZE | RBS_DBLCLKTOGGLE | RBS_BANDBORDERS*/, AFX_IDW_REBAR))
 //		return false;
 	if (!CWnd::Create(AfxRegisterWndClass(0, ::LoadCursor(NULL, IDC_ARROW)), 0, WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN,

@@ -7,6 +7,7 @@ ____________________________________________________________________________*/
 
 #pragma once
 #include "resource.h"
+#include "DialogBase.h"
 #include "DlgAutoResize.h"
 #include <boost/function.hpp>
 #include "FilterData.h"
@@ -19,7 +20,7 @@ ____________________________________________________________________________*/
 enum { DEFAULT_TB_PAD_DX= 8, DEFAULT_TB_PAD_DY= 10 };
 
 
-class FilterDialog : public CDialog, protected ResizeWnd
+class FilterDialog : public DialogBase, protected ResizeWnd
 {
 public:
 	FilterDialog(int id, CWnd* parent);

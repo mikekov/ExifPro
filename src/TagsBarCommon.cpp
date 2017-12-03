@@ -367,6 +367,7 @@ int TagsBarCommon::OnCreate(LPCREATESTRUCT create_struct)
 		VERIFY(separator_.SubclassDlgItem(IDC_SEPARATOR, &rating_wnd_));
 		stars_.SetClickCallback(boost::bind(&TagsBarCommon::StarClicked, this, _1));
 
+		clear_rating_.SetOwnerDraw(true);
 		VERIFY(clear_rating_.SubclassDlgItem(IDC_CANCEL, &rating_wnd_));
 		int cmd[]= { CLEAR_RATING };
 		enum { DEFAULT_TB_PAD_DX= 8, DEFAULT_TB_PAD_DY= 10 };
@@ -378,6 +379,7 @@ int TagsBarCommon::OnCreate(LPCREATESTRUCT create_struct)
 
 	if (create_toolbar_)
 	{
+		tool_bar_wnd_.SetOwnerDraw(true);
 		static int cmds[]= { ID_TAGS_MANAGE, ID_TAGS_OPTIONS };
 		tool_bar_wnd_.SetOnIdleUpdateState(false);
 		int bmp_id= create_big_toolbar_ ? IDB_TAGS_TOOLBAR_BIG : IDB_TAGS_TOOLBAR;

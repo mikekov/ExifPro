@@ -61,7 +61,7 @@ public:
 	typedef boost::function<bool (VectPhotoInfo& photos, const String& tag, bool apply, CWnd* parent)> ApplyTagsFn;
 	typedef boost::function<bool (VectPhotoInfo& photos, int rating, CWnd* parent)> ApplyRatingFn;
 
-	// if true leave space for a toolbar at a top
+	// if true leave space for a toolbar at the top
 	bool tool_bar_at_top_;
 
 	ToolBarWnd& GetToolBar()		{ return tool_bar_wnd_; }
