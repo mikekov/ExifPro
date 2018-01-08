@@ -194,3 +194,9 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# app specific
+# SetupApp/Release/
+
+# exceptions
+!libs/libjpeg-turbo/release
