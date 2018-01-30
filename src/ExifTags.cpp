@@ -145,6 +145,15 @@ const TCHAR* TagName(uint16 tag)
 	case 0xA40C: name =	_T("Subject Distance Range");		break;
 	case 0xA420: name =	_T("Image Unique ID");				break;
 
+	// Lens
+	// DC-010-2017
+	// Exif 2.31 metadata for XMP
+	// http://www.cipa.jp/std/documents/e/DC-010-2017_E.pdf
+	case 0xA432: name = _T("Lens Specification");			break;
+	case 0xA433: name = _T("Lens Manufacturer");			break;
+	case 0xA434: name = _T("Lens Model");					break;
+	case 0xA435: name = _T("Lens Serial Number");			break;
+
 	// PrintIM?
 	case 0xc4a5: name =	_T("Print Image Matching");			break;
 
