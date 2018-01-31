@@ -52,6 +52,7 @@ static const ColDef g_column_definitions[]=
 	{ _T("Exposure Program"),			_T("Exp. Program"),			_T(""),		LVCFMT_LEFT,	 95 },
 	{ _T("Exposure Bias"),				_T("Exp. Bias"),			_T("EV"),	LVCFMT_RIGHT,	 60 },
 	{ _T("Metering Mode"),				_T("Metering Mode"),		_T(""),		LVCFMT_LEFT,	100 },
+	{ _T("Lens Model"),					_T("Lens Model"),			_T(""),		LVCFMT_LEFT,	100 },
 	{ _T("Light Source"),				_T("Light Source"),			_T(""),		LVCFMT_LEFT,	 90 },
 	{ _T("Flash"),						_T("Flash"),				_T(""),		LVCFMT_LEFT,	 40 },
 	{ _T("Focal Length"),				_T("Focal Length"),			_T("mm"),	LVCFMT_RIGHT,	 80 },
@@ -427,6 +428,9 @@ void Columns::GetInfo(String& out, int index, const PhotoInfo& inf) const
 	case COL_MET_MODE:
 		out = inf.MeteringMode();
 		break;
+	case COL_LENS_MODEL:
+		out = inf.GetLensModel();
+		break;
 	case COL_LIGHT_SRC:
 		out = inf.LightSource();
 		break;
@@ -757,6 +761,9 @@ bool Columns::Less(int column, const PhotoInfo& info1, const PhotoInfo& info2) c
 
 	case COL_MET_MODE:		// metering mode
 		return info1.GetMeteringMode() < info2.GetMeteringMode();
+
+	case COL_LENS_MODEL:	// lens model
+		return info1.GetLensModel() < info2.GetLensModel();
 
 	case COL_LIGHT_SRC:		// light source
 		return info1.GetLightSource() < info2.GetLightSource();

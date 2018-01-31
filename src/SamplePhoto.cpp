@@ -43,6 +43,7 @@ SmartPtr CreateSamplePhotoInfo()
 	XmpData xmp;
 	xmp.Author = _T("MK");
 	photo->SetMetadata(xmp);
+	photo->SetLensModel(_T("Lens"));
 
 	PostProcessTime(photo.get());
 

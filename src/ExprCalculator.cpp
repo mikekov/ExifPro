@@ -297,6 +297,7 @@ static int ElementRead(Lua* lua)
 	CASE('mode',	"model",	TStr2AStr(photo->GetModel()))
 	CASE('fovc',	0,			photo->GetFieldOfViewCrop())
 	CASE('date',	0,			DateTimeFormat(photo->GetDateTime(), buffer))
+	CASE('lens',	"lensmodel",		TStr2AStr(photo->GetLensModel()))
 
 	default:
 		error = true;

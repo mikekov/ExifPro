@@ -1453,6 +1453,7 @@ uint32				PhotoInfo::GetVisitedDirId() const		{ return dir_visited_; }
 const GPSData*		PhotoInfo::GetGpsData() const			{ return gps_data_.get(); }
 Rational			PhotoInfo::GetSubjectDistance() const	{ return subject_distance_; }
 const std::wstring&	PhotoInfo::PhotoDescription() const		{ return photo_desc_; }
+String				PhotoInfo::GetLensModel() const			{ return lens_model_; }
 
 
 void PhotoInfo::SetVisitedDirId(uint32 dir)
@@ -1561,6 +1562,11 @@ void PhotoInfo::SetSize(uint32 w, uint32 h)
 	height_ = h;
 	cached_effective_orientation_ = CalcPhotoOrientation();
 }
+
+void PhotoInfo::SetLensModel(const String& lens)
+	{
+	lens_model_ = lens;
+	}
 
 
 uint16 PhotoInfo::ThumbnailOrientation() const
