@@ -51,6 +51,7 @@ static const TCHAR* attribs[]=
 	_T("img.fovc"),
 	_T("img.h"),
 	_T("img.iso"),
+	_T("img.lensmodel"),
 	_T("img.lightsrc"),
 	_T("img.make"),
 	_T("img.metmode"),
@@ -236,6 +237,7 @@ String GetImgAttribsHelpString(unsigned int include_help)
 		_T("img.fovc\t- field of view crop\r\n")
 		_T("img.h\t- image height\r\n")
 		_T("img.iso\t- sensitivity\r\n")
+		_T("img.lensmodel\t- lens model\r\n")
 		_T("img.lightsrc\t- light source\r\n")
 		_T("img.make\t- camera make\r\n")
 		_T("img.metmode\t- metering mode\r\n")

@@ -124,6 +124,7 @@ public:
 	void SetExifDescription(const std::wstring& desc);
 	void SetGpsData(AutoPtr<GPSData> gps);
 	void SetVisitedDirId(uint32 dir);
+	void SetLensModel(const String& lens);
 
 	//------------------------- file
 	const String&	GetName() const;
@@ -148,6 +149,7 @@ public:
 	const GPSData*	GetGpsData() const;
 	Rational		GetSubjectDistance() const;
 	const std::wstring& PhotoDescription() const;
+	String			GetLensModel() const;
 
 	void		SetWidth(uint32 w);
 	void		SetHeight(uint32 h);
@@ -169,6 +171,7 @@ private:
 	SRational	shutter_speed_value_;
 	std::wstring description_;		// EXIF_USER_DESC (tag 0x9286)
 	Rational	subject_distance_;
+	String		lens_model_;
 	//------------------------- extra EXIF data
 	AutoPtr<MakerNote>	maker_note_;
 	AutoPtr<GPSData>	gps_data_;

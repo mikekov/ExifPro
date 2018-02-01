@@ -780,19 +780,20 @@ BEGIN
         MENUITEM "Field of View Crop\timg.fovc", 10
         MENUITEM "Image Height\timg.h",         11
         MENUITEM "ISO Sensitivity\timg.iso",    12
-        MENUITEM "Light Source\timg.lightsrc",  13
-        MENUITEM "Camera Make\timg.make",       14
-        MENUITEM "Metering Mode\timg.metmode",  15
-        MENUITEM "Camera Model\timg.model",     16
-        MENUITEM "File Name\timg.name",         17
-        MENUITEM "File Path\timg.path",         18
-        MENUITEM "Portrait Orientation\timg.portrait", 19
-        MENUITEM "Rating (Stars)\timg.rating",  20
-        MENUITEM "File Size (in Bytes)\timg.size", 21
-        MENUITEM "sRGB Color Space\timg.srgb",  22
-        MENUITEM "Subject Distance\timg.subdist", 23
-        MENUITEM "Creation Time Stamp\timg.time", 24
-        MENUITEM "Image Width\timg.w",          25
+		MENUITEM "Lens Model\timg.lensmodel",	13
+		MENUITEM "Light Source\timg.lightsrc",  14
+        MENUITEM "Camera Make\timg.make",       15
+        MENUITEM "Metering Mode\timg.metmode",  16
+        MENUITEM "Camera Model\timg.model",     17
+        MENUITEM "File Name\timg.name",         18
+        MENUITEM "File Path\timg.path",         19
+        MENUITEM "Portrait Orientation\timg.portrait", 20
+        MENUITEM "Rating (Stars)\timg.rating",  21
+        MENUITEM "File Size (in Bytes)\timg.size", 22
+        MENUITEM "sRGB Color Space\timg.srgb",  23
+        MENUITEM "Subject Distance\timg.subdist", 24
+        MENUITEM "Creation Time Stamp\timg.time", 25
+        MENUITEM "Image Width\timg.w",          26
     END
 END
 

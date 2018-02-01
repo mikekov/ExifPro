@@ -545,6 +545,8 @@ static uint32 ReadEntry(FileStream& ifs, Offset ifd_start, String& make, String&
 	case 0xa409:	if (output) output->SetInterpretedInfo(Saturation(val.GetData()));			break;
 	case 0xa40a:	if (output) output->SetInterpretedInfo(Sharpness(val.GetData()));			break;
 	case 0xa40c:	if (output) output->SetInterpretedInfo(SubjectDistanceRange(val.GetData()));	break;
+	case 0xa434:	if (info) info->SetLensModel(TrimSpaces(val.AsString()));					break;
+
 
 		// TIFF/EP
 	case 0x9217:	if (output) output->SetInterpretedInfo(SensingMethod(val.GetData()));		break;
